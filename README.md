@@ -14,7 +14,7 @@
 [![GitHub issues][typedly-badge-issues]][typedly-issues]
 [![GitHub license][typedly-badge-license]][typedly-license]
 
-**Version:** v2.1.0
+**Version:** v1.0.0
 
 A **TypeScript** type definitions package for settings.
 
@@ -89,7 +89,7 @@ import { PatternSettings } from '@typedly/settings';
 
 #### `Settings`
 
-[`length-options.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/settings.interface.ts)
+[`settings.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/settings.interface.ts)
 
 ```typescript
 import { Settings } from '@typedly/settings';
