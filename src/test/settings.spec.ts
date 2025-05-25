@@ -2,6 +2,7 @@ import { Settings } from '../interface';
 
 export const settings: Settings<
   'abcd1234',
+  number,
   27,
   34,
   RegExp

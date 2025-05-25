@@ -1,6 +1,6 @@
-import { LengthOptions } from '../interface';
+import { Length } from '../interface';
 
-const lengthOptions: LengthOptions<27, 47> = {
+const length: Length<0, 27, 47> = {
   'min': 27,
   'max': 47,
 }

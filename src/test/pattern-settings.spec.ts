@@ -9,3 +9,7 @@ export const patternSettings: PatternSettings<RegExp> = {
     uppercase: true,
   },
 }
+
+export const patternRegExpSettings: PatternSettings<RegExp> = {
+  pattern: /[a]g/g
+}

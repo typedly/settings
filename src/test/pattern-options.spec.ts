@@ -1,8 +1,6 @@
 import { PatternOptions } from '../interface/';
 
-const lengthOptions: PatternOptions<
-  RegExp
-> = {
+const patternOptions: PatternOptions<RegExp> = {
   lowercase: true,
   numeric: true,
   regexp: /[a]g/g,
