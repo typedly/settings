@@ -7,6 +7,7 @@ import { ValueSettings } from "./value-settings.interface";
  * @export
  * @interface Settings
  * @template [Value=string] 
+ * @template {number} [Length=number] The type of the expected length of the value, also between min and max.
  * @template {number} [Min=number] The type of the minimum length of the value.
  * @template {number} [Max=number] The type of the maximum length of the value.
  * @template {RegExp} [Pattern=RegExp] The type of pattern to match against the value.

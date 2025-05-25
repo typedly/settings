@@ -1,7 +1,7 @@
 /**
  * @description Represents options for length validation.
  * @export
- * @interface Length
+ * @interface LengthOptions
  * @template {number} [Value=number] The expected length of the value, also between min and max.
  * @template {number} [Min=number] The minimum length of the value.
  * @template {number} [Max=number] The maximum length of the value.
