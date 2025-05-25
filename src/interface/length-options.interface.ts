@@ -11,7 +11,22 @@ export interface LengthOptions<
   Min extends number = number,
   Max extends number = number
 > {
+  
+  /**
+   * @description Represents expected length of the value, also between min and max.
+   * @type {?Value}
+   */
   value?: Value;
+
+  /**
+   * @description Represents the minimum length of the value.
+   * @type {?Min}
+   */
   min?: Min;
+
+  /**
+   * @description Represents the maximum length of the value.
+   * @type {?Max}
+   */
   max?: Max;
 }
