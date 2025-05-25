@@ -2,7 +2,7 @@
  * @description Represents the pattern options for validation settings.
  * @export
  * @interface PatternOptions
- * @template {RegExp} [Pattern=RegExp] The regular expression pattern to match.
+ * @template {RegExp} [Value=RegExp] The regular expression pattern to match.
  */
 export interface PatternOptions<Value extends RegExp = RegExp> {
   /**
