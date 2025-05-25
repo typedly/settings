@@ -99,11 +99,13 @@ export const lengthSettings: LengthSettings<27, 47> = {
 import { PatternSettings } from '@typedly/settings';
 
 export const patternSettings: PatternSettings<RegExp> = {
-  lowercase: true,
-  numeric: true,
-  pattern: /[a]g/g,
-  special: true,
-  uppercase: true,
+  pattern: {
+    lowercase: true,
+    numeric: true,
+    regexp: /[a]g/g,
+    special: true,
+    uppercase: true,
+  },
 }
 ```
 
