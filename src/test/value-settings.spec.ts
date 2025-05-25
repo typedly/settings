@@ -1,9 +1,5 @@
-import { PatternSettings } from '../interface';
+import { ValueSettings } from '../interface';
 
-export const patternSettings: PatternSettings<RegExp> = {
-  lowercase: true,
-  numeric: true,
-  pattern: /[a]g/g,
-  special: true,
-  uppercase: true,
+export const patternSettings: ValueSettings<'the value'> = {
+  value: 'the value'
 }
