@@ -53,6 +53,7 @@ import {
   // Interface
   LengthOptions,
   LengthSettings,
+  PatternOptions,
   PatternSettings,
   Settings,
   ValueSettings,
