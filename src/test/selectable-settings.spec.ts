@@ -3,6 +3,7 @@ import { SelectableSettings } from "../type";
 export const settings: SelectableSettings<
   ['length', 'value'],
   'abcd1234',
+  number,
   27,
   34,
   RegExp

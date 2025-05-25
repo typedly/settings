@@ -1,17 +1,21 @@
 /*
  * Public API Surface of settings
  */
-
 export type {
-  Settings,
-  LengthSettings,
+  // Length.
+  Length,
   LengthOptions,
+  LengthSettings,
+  // Pattern.
   PatternOptions,
   PatternSettings,
-  ValueSettings
+  // Value.
+  ValueSettings,
+  // Settings.
+  Settings,
 } from './interface';
 
 export type {
+  DisplaySelectedSettings,
   SelectableSettings,
-  DisplaySelectedSettings
 } from './type';
