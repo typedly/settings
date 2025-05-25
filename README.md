@@ -25,6 +25,7 @@ A **TypeScript** type definitions package for settings.
   - [Interface](#interface)
     - [`LengthOptions`](#lengthoptions)
     - [`LengthSettings`](#lengthsettings)
+    - [`PatternOptions`](#patternoptions)
     - [`PatternSettings`](#patternsettings)
     - [`Settings`](#settings)
     - [`ValueSettings`](#valuesettings)
@@ -73,6 +74,21 @@ import { LengthOptions } from '@typedly/settings';
 const lengthOptions: LengthOptions<27, 47> = {
   'min': 27,
   'max': 47,
+}
+```
+
+#### `PatternOptions`
+
+[`pattern-options.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/pattern-options.interface.ts)
+
+```typescript
+import { PatternOptions } from '@typedly/settings';
+
+export const patternOptions: PatternOptions<27, 47> = {
+  length: {
+    'min': 27,
+    'max': 47,
+  }
 }
 ```
 
@@ -144,12 +160,8 @@ export const settings: Settings<
 ```typescript
 import { ValueSettings } from '@typedly/settings';
 
-export const patternSettings: PatternSettings<RegExp> = {
-  lowercase: true,
-  numeric: true,
-  pattern: /[a]g/g,
-  special: true,
-  uppercase: true,
+export const patternSettings: ValueSettings<'the value'> = {
+  value: 'the value'
 }
 ```
 
