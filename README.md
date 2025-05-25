@@ -69,6 +69,11 @@ import {
 
 ```typescript
 import { LengthOptions } from '@typedly/settings';
+
+const lengthOptions: LengthOptions<27, 47> = {
+  'min': 27,
+  'max': 47,
+}
 ```
 
 #### `LengthSettings`
@@ -77,6 +82,13 @@ import { LengthOptions } from '@typedly/settings';
 
 ```typescript
 import { LengthSettings } from '@typedly/settings';
+
+export const lengthSettings: LengthSettings<27, 47> = {
+  length: {
+    'min': 27,
+    'max': 47,
+  }
+}
 ```
 
 #### `PatternSettings`
@@ -85,6 +97,14 @@ import { LengthSettings } from '@typedly/settings';
 
 ```typescript
 import { PatternSettings } from '@typedly/settings';
+
+export const patternSettings: PatternSettings<RegExp> = {
+  lowercase: true,
+  numeric: true,
+  pattern: /[a]g/g,
+  special: true,
+  uppercase: true,
+}
 ```
 
 #### `Settings`
@@ -93,6 +113,26 @@ import { PatternSettings } from '@typedly/settings';
 
 ```typescript
 import { Settings } from '@typedly/settings';
+
+export const settings: Settings<
+  'abcd1234',
+  27,
+  34,
+  RegExp
+> = {
+  // LengthSettings
+  length: { min: 27, max: 34 },
+  // PatternSettings
+  pattern: {
+    lowercase: true,
+    numeric: true,
+    regexp: /[a]g/g,
+    special: true,
+    uppercase: true,
+  },
+  // ValueSettings
+  value: 'abcd1234',
+}
 ```
 
 #### `ValueSettings`
@@ -101,6 +141,14 @@ import { Settings } from '@typedly/settings';
 
 ```typescript
 import { ValueSettings } from '@typedly/settings';
+
+export const patternSettings: PatternSettings<RegExp> = {
+  lowercase: true,
+  numeric: true,
+  pattern: /[a]g/g,
+  special: true,
+  uppercase: true,
+}
 ```
 
 ### Type
@@ -119,6 +167,27 @@ import { DisplaySelectedSettings } from '@typedly/settings';
 
 ```typescript
 import { SelectableSettings } from '@typedly/settings';
+
+export const settings: SelectableSettings<
+  ['length', 'value'],
+  'abcd1234',
+  27,
+  34,
+  RegExp
+> = {
+  // LengthSettings
+  length: { min: 27, max: 34 },
+  // PatternSettings - not allowed
+  // pattern: {
+  //   lowercase: true,
+  //   numeric: true,
+  //   regexp: /[a]g/g,
+  //   special: true,
+  //   uppercase: true,
+  // },
+  // ValueSettings
+  value: 'abcd1234',
+}
 ```
 
 ## Contributing
