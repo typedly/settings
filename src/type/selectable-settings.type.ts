@@ -1,4 +1,4 @@
-import { Settings } from '../interface/settings.interface';
+import { Settings } from '../interface';
 import { DisplaySelectedSettings } from './display-selected-settings.type';
 
 export type SelectableSettings<
