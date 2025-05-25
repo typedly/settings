@@ -6,6 +6,7 @@ export type {
   Settings,
   LengthSettings,
   LengthOptions,
+  PatternOptions,
   PatternSettings,
   ValueSettings
 } from './interface';
