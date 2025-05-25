@@ -1,14 +1,8 @@
-
-
+import { PatternOptions } from "./pattern-options.interface";
 
 export interface PatternSettings<
   Pattern extends RegExp = RegExp,
+  Options extends object = PatternOptions<Pattern>
 > {
-  pattern: {
-    regexp: Pattern
-    lowercase: boolean;
-    uppercase: boolean;
-    numeric: boolean;
-    special: Boolean;
-  };
+  pattern: Options
 }

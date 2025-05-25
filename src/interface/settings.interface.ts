@@ -2,7 +2,6 @@ import { LengthSettings } from "./length-settings.interface";
 import { PatternSettings } from "./pattern-settings.interface";
 import { ValueSettings } from "./value-settings.interface";
 
-
 export interface Settings<
   Value = string,
   Min extends number = number,
@@ -13,5 +12,3 @@ export interface Settings<
   LengthSettings<Min, Max>,
   PatternSettings<Pattern> {
 }
-
-
