@@ -85,11 +85,9 @@ const lengthOptions: LengthOptions<27, 47> = {
 ```typescript
 import { PatternOptions } from '@typedly/settings';
 
-export const patternOptions: PatternOptions<27, 47> = {
-  length: {
-    'min': 27,
-    'max': 47,
-  }
+export const patternOptions: PatternOptions = {
+  regexp: /^[a-zA-Z0-9_-]+$/,
+  lowercase: true,
 }
 ```
 
