@@ -23,7 +23,11 @@
   },
   "keywords": [
     "@typedly",
-    "@typedly/settings"
+    "@typedly/settings",
+    "LengthSettings",
+    "PatternSettings",
+    "Settings",
+    "ValueSettings"
   ],
   "funding": [
     {
