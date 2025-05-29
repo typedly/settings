@@ -1,5 +1,5 @@
-import { ValueSettings } from '../interface';
+import { ValueSetting } from '../interface';
 
-export const valueSettings: ValueSettings<'the value'> = {
+export const valueSettings: ValueSetting<'the value'> = {
   value: 'the value'
 }
