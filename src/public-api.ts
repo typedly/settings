@@ -7,12 +7,13 @@ export type {
   Length,
   LengthOptions,
   LengthSetting,
+  LengthSettings,
   // Pattern.
   PatternOptions,
   PatternSetting,
   PatternSettings,
   // Value.
-  ValueSetting as ValueSettings,
+  ValueSetting,
   // Settings.
   Settings,
 } from './interface';
