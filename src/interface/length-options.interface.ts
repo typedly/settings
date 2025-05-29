@@ -1,32 +1,18 @@
+// Interface.
+import { Length } from "./length.interface";
+// Type.
+import { OptionalField } from "../type/optional-field.type";
 /**
  * @description Represents options for length validation.
+ * The length options fields are optional, fields can be omitted by setting them to `undefined` or by not providing them.
  * @export
  * @interface LengthOptions
- * @template {number} [Value=number] The expected length of the value, also between min and max.
- * @template {number} [Min=number] The minimum length of the value.
- * @template {number} [Max=number] The maximum length of the value.
+ * @template {number | undefined} [Value=number | undefined] The expected length of the value, also between min and max.
+ * @template {number | undefined} [Min=number | undefined] The minimum length of the value.
+ * @template {number | undefined} [Max=number | undefined] The maximum length of the value.
  */
 export interface LengthOptions<
-  Value extends number = number,
-  Min extends number = number,
-  Max extends number = number
-> {
-  
-  /**
-   * @description Represents expected length of the value, also between min and max.
-   * @type {?Value}
-   */
-  value?: Value;
-
-  /**
-   * @description Represents the minimum length of the value.
-   * @type {?Min}
-   */
-  min?: Min;
-
-  /**
-   * @description Represents the maximum length of the value.
-   * @type {?Max}
-   */
-  max?: Max;
-}
+  Value extends number | undefined = number | undefined,
+  Min extends number | undefined = number | undefined,
+  Max extends number | undefined = number | undefined
+> extends OptionalField<Length<Value, Min, Max>> {}
