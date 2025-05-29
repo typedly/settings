@@ -1,7 +1,7 @@
 // Interface.
 import { PatternSettings } from "./pattern-settings.interface";
 // Type.
-import { OptionalField } from '../type/optional-field.type';
+import { OptionalField } from '../../type/optional-field.type';
 /**
  * @description Represents the pattern options for validation settings.
  * @export
