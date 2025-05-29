@@ -90,7 +90,7 @@ import {
 
 #### `Length`
 
-[`length-options.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/length.interface.ts)
+[`length.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/length.interface.ts)
 
 ```typescript
 import { Length } from '@typedly/settings';
@@ -113,7 +113,11 @@ const length: Length<
 ```typescript
 import { LengthOptions } from '@typedly/settings';
 
-export const length: LengthOptions<0, 27, 47> = {
+export const length: LengthOptions<
+  0,  // Value
+  27, // Min
+  47  // Max
+> = {
   min: 27,
   max: 47,
 }
@@ -126,7 +130,7 @@ export const length: LengthOptions<0, 27, 47> = {
 ```typescript
 import { LengthSettings } from '@typedly/settings';
 
-const lengthSetting: LengthSettings<
+const lengthSettings: LengthSettings<
   0,  // Value
   27, // Min
   47  // Max
@@ -318,7 +322,7 @@ import { RequiredField } from '@typedly/settings';
 
 This library uses a structured approach for handling settings, options, and configuration, ensuring strong typing and clarity, as follows.
 
-## Naming Convention for Settings Interfaces
+### Naming Convention for Settings Interfaces
 
 To promote clarity and consistency, the following naming conventions for settings interfaces are used:
 
@@ -342,7 +346,7 @@ export interface LengthSetting {
 }
 ```
 
-### Summary Table
+#### Summary Table
 
 | Name               | Meaning                                | Example Usage                                |
 |--------------------|----------------------------------------|----------------------------------------------|
