@@ -24,19 +24,22 @@ A **TypeScript** type definitions package for settings.
 - [Api](#api)
   - [Interface](#interface)
     - Length
-    - [`Length`](#length)
-    - [`LengthOptions`](#lengthoptions)
-    - [`LengthSettings`](#lengthsettings)
-    - [`LengthSettings`](#lengthsettings)
+      - [`Length`](#length)
+      - [`LengthOptions`](#lengthoptions)
+      - [`LengthSetting`](#lengthsetting)
+      - [`LengthSettings`](#lengthsettings)
     - Pattern
-    - [`PatternOptions`](#patternoptions)
-    - [`PatternSettings`](#patternsettings)
+      - [`PatternOptions`](#patternoptions)
+      - [`PatternSetting`](#patternsetting)
+      - [`PatternSettings`](#patternsettings)
     - Other
-    - [`ValueSettings`](#valuesettings)
-    - [`Settings`](#settings)
+      - [`ValueSettings`](#valuesetting)
+      - [`Settings`](#settings)
   - [Type](#type)
     - [`DisplaySelectedSettings`](#displayselectedsettings)
     - [`SelectableSettings`](#selectablesettings)
+    - [`OptionalField`](#optionalfield)
+    - [`RequiredField`](#requiredfield)
 - [Configuration System Overview](#configuration-system-overview)
 - [Contributing](#contributing)
 - [Support](#support)
@@ -55,22 +58,32 @@ npm install @typedly/settings --save-peer
 ## Api
 
 ```typescript
+// Interface.
 import {
   // Length.
   Length,
   LengthOptions,
+  LengthSetting,
   LengthSettings,
   // Pattern.
   PatternOptions,
+  PatternSetting,
   PatternSettings,
   // Value.
-  ValueSettings,
+  ValueSetting,
   // Settings.
   Settings,
-   // Type.
+} from '@typedly/settings';
+
+// Type.
+import {
+  // Settings.
   DisplaySelectedSettings,
   SelectableSettings,
-} from '@typedly/settings';
+  // Settings fields.
+  OptionalField,
+  RequiredField,
+} from '@typedly/settings'; 
 ```
 
 ### Interface
@@ -82,9 +95,14 @@ import {
 ```typescript
 import { Length } from '@typedly/settings';
 
-export const length: Length<0, 27, 47> = {
-  'min': 27,
-  'max': 47,
+const length: Length<
+  0,  // Value
+  27, // Min
+  47  // Max
+> = {
+  value: 0,
+  min: 27,
+  max: 47,
 }
 ```
 
@@ -96,8 +114,8 @@ export const length: Length<0, 27, 47> = {
 import { LengthOptions } from '@typedly/settings';
 
 export const length: LengthOptions<0, 27, 47> = {
-  'min': 27,
-  'max': 47,
+  min: 27,
+  max: 47,
 }
 ```
 
@@ -108,7 +126,29 @@ export const length: LengthOptions<0, 27, 47> = {
 ```typescript
 import { LengthSettings } from '@typedly/settings';
 
-export const lengthSettings: LengthSettings<0, 27, 47> = {
+const lengthSetting: LengthSettings<
+  0,  // Value
+  27, // Min
+  47  // Max
+> = {
+  value: 0,
+  min: 27,
+  max: 47,
+}
+```
+
+#### `LengthSetting`
+
+[`length-setting.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/length-setting.interface.ts)
+
+```typescript
+import { LengthSetting } from '@typedly/settings';
+
+const lengthSetting: LengthSetting<
+  0,  // Value
+  27, // Min
+  47  // Max
+> = {
   length: {
     value: 0,
     min: 27,
@@ -116,7 +156,9 @@ export const lengthSettings: LengthSettings<0, 27, 47> = {
   }
 }
 
-export const lengthExactSettings: LengthSettings<27> = {
+const lengthExactSetting: LengthSetting<
+  27 // Value
+> = {
   length: 27
 }
 ```
@@ -137,14 +179,14 @@ const patternOptions: PatternOptions = {
 }
 ```
 
-#### `PatternSettings`
+#### `PatternSetting`
 
-[`pattern-settings.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/pattern-settings.interface.ts)
+[`pattern-setting.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/pattern-setting.interface.ts)
 
 ```typescript
-import { PatternSettings } from '@typedly/settings';
+import { PatternSetting } from '@typedly/settings';
 
-export const patternSettings: PatternSettings<RegExp> = {
+const patternSetting: PatternSetting<RegExp> = {
   pattern: {
     lowercase: true,
     numeric: true,
@@ -154,19 +196,35 @@ export const patternSettings: PatternSettings<RegExp> = {
   },
 }
 
-export const patternRegExpSettings: PatternSettings<RegExp> = {
+const patternRegExpSetting: PatternSetting<RegExp> = {
   pattern: /^[a-zA-Z0-9_-]+$/
 }
 ```
 
-#### `ValueSettings`
+#### `PatternSettings`
 
-[`value-settings.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/value-settings.interface.ts)
+[`pattern-settings.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/pattern-settings.interface.ts)
 
 ```typescript
-import { ValueSettings } from '@typedly/settings';
+import { PatternSettings } from '@typedly/settings';
 
-export const valueSettings: ValueSettings<'the value'> = {
+const patternSettings: PatternSettings<RegExp> = {
+  lowercase: true,
+  numeric: true,
+  regexp: /^[a-zA-Z0-9_-]+$/,
+  special: true,
+  uppercase: true,
+}
+```
+
+#### `ValueSetting`
+
+[`value-setting.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/value-setting.interface.ts)
+
+```typescript
+import { ValueSetting } from '@typedly/settings';
+
+export const valueSettings: ValueSetting<'the value'> = {
   value: 'the value'
 }
 ```
@@ -238,6 +296,22 @@ export const settings: SelectableSettings<
   // ValueSettings
   value: 'abcd1234',
 }
+```
+
+#### `OptionalField`
+
+[`optional-field.type.ts`](https://github.com/typedly/settings/blob/main/src/type/optional-field.type.ts)
+
+```typescript
+import { OptionalField } from '@typedly/settings';
+```
+
+#### `RequiredField`
+
+[`required-field.type.ts`](https://github.com/typedly/settings/blob/main/src/type/required-field.type.ts)
+
+```typescript
+import { RequiredField } from '@typedly/settings';
 ```
 
 ## Configuration System Overview
