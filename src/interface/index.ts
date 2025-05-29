@@ -2,6 +2,7 @@
 export type { Length } from './length.interface';
 export type { LengthOptions } from './length-options.interface';
 export type { LengthSetting } from './length-setting.interface';
+export type { LengthSettings } from './length-settings.interface';
 // Pattern.
 export type { PatternOptions } from './pattern-options.interface';
 export type { PatternSetting } from './pattern-setting.interface';
