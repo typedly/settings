@@ -23,16 +23,21 @@ A **TypeScript** type definitions package for settings.
 - [Installation](#installation)
 - [Api](#api)
   - [Interface](#interface)
+    - Length
     - [`Length`](#length)
     - [`LengthOptions`](#lengthoptions)
     - [`LengthSettings`](#lengthsettings)
+    - [`LengthSettings`](#lengthsettings)
+    - Pattern
     - [`PatternOptions`](#patternoptions)
     - [`PatternSettings`](#patternsettings)
+    - Other
     - [`ValueSettings`](#valuesettings)
     - [`Settings`](#settings)
   - [Type](#type)
     - [`DisplaySelectedSettings`](#displayselectedsettings)
     - [`SelectableSettings`](#selectablesettings)
+- [Configuration System Overview](#configuration-system-overview)
 - [Contributing](#contributing)
 - [Support](#support)
 - [Code of Conduct](#code-of-conduct)
@@ -234,6 +239,117 @@ export const settings: SelectableSettings<
   value: 'abcd1234',
 }
 ```
+
+## Configuration System Overview
+
+This library uses a structured approach for handling settings, options, and configuration, ensuring strong typing and clarity, as follows.
+
+## Naming Convention for Settings Interfaces
+
+To promote clarity and consistency, the following naming conventions for settings interfaces are used:
+
+- **Singular (`Setting`)**: Represents a single, specific configuration option.
+  - **Example**:  
+      `LengthSetting` describes the settings for a single aspect, such as the allowed length of a value.
+    - `MinLengthSetting` describes the minimum length requirement.
+    - `MaxLengthSetting` describes the maximum length requirement.
+
+- **Plural (`Settings`)**: Represents a group of related settings, often an object containing multiple `Setting` properties.
+  - **Example**:  
+    `LengthSettings` groups together related settings, such as both minimum and maximum length requirements:
+
+```typescript
+export interface LengthSettings {
+  min: MinLengthSetting;
+  max: MaxLengthSetting;
+}
+export interface LengthSetting {
+  length: LengthSettings;
+}
+```
+
+### Summary Table
+
+| Name               | Meaning                                | Example Usage                                |
+|--------------------|----------------------------------------|----------------------------------------------|
+| `LengthSetting`    | Single setting (e.g., length)          | `const min: LengthSetting = { ... }`         |
+| `MinLengthSetting` | Specific single setting (min length)   | `const min: MinLengthSetting = { ... }`      |
+| `LengthSettings`   | Group of related settings (plural)     | `const settings: LengthSettings = { ... }`   |
+
+### Settings
+
+**Settings** types define the _shape_ of configuration data with all fields **required** at the top level, but can be omitted by setting them to `undefined`.
+They represent the complete set of parameters that can be provided, ensuring that all necessary information is present.
+The settings may include option objects whose own fields can be optional, even though top-level field in the settings is **required**, but may be set to `undefined`.
+
+- Represents the “full shape” of what can be configured.
+- Used for validation, documentation, or generating configuration forms.
+- Unlike Options, Settings ensure every possible field is present, event if unset.
+
+_Example:_
+
+```typescript
+// Represents the concrete settings for a length configuration.
+export interface Length<
+  Value extends number | undefined = number | undefined,
+  Min extends number | undefined = number | undefined,
+  Max extends number | undefined = number | undefined
+> {
+  /**
+   * @description Represents expected length of the value, also between min and max.
+   * @type {Value}
+   */
+  value: Value;
+
+  /**
+   * @description Represents the minimum length of the value.
+   * @type {Min}
+   */
+  min: Min;
+
+  /**
+   * @description Represents the maximum length of the value.
+   * @type {Max}
+   */
+  max: Max;
+}
+```
+
+### Options
+
+**Options** types are based on the corresponding settings, but make **all or some fields optional**.  
+Use options when you want to allow partial configuration, for example for incremental setup or user input that may not specify all values.
+
+_Example:_
+
+```typescript
+export interface LengthOptions<
+  Value extends number | undefined = number | undefined,
+  Min extends number | undefined = number | undefined,
+  Max extends number | undefined = number | undefined
+> extends OptionalField<Length<Value, Min, Max>> {}
+```
+
+---
+
+### Configuration
+
+**Configuration** types represent the _result_ of applying/saving settings and options.  
+They often reflect the actual configuration that is active at runtime, possibly after defaults and validation have been applied.
+
+_Example:_
+
+```typescript
+export type LengthConfiguration = LengthSettings;
+```
+
+### **Summary Table**
+
+| Type          | Fields Required?  | Usage                                     |
+|---------------|-------------------|-------------------------------------------|
+| Settings      | All               | Full specification of settings            |
+| Options       | Some/All optional | Partial or user-provided configuration    |
+| Configuration | All (finalized)   | Saved, validated, or runtime configuration|
 
 ## Contributing
 
