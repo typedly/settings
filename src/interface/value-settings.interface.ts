@@ -1,9 +1,9 @@
 /**
- * @description Represents the settings for a value configuration.
+ * @description Represents the setting for a value configuration.
  * @export
- * @interface ValueSettings 
+ * @interface ValueSetting
  * @template Value The type of the value to be validated.
  */
-export interface ValueSettings<Value> {
-  value: Value;
+export interface ValueSetting<Value> {
+  value: Value | undefined;
 }
