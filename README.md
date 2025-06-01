@@ -90,7 +90,7 @@ import {
 
 #### `Length`
 
-[`length.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/length.interface.ts)
+[`length.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/length/length.interface.ts)
 
 ```typescript
 import { Length } from '@typedly/settings';
@@ -108,7 +108,7 @@ const length: Length<
 
 #### `LengthOptions`
 
-[`length-options.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/length-options.interface.ts)
+[`length-options.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/length/length-options.interface.ts)
 
 ```typescript
 import { LengthOptions } from '@typedly/settings';
@@ -125,7 +125,7 @@ export const length: LengthOptions<
 
 #### `LengthSettings`
 
-[`length-settings.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/length-settings.interface.ts)
+[`length-settings.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/length/length-settings.interface.ts)
 
 ```typescript
 import { LengthSettings } from '@typedly/settings';
@@ -143,7 +143,7 @@ const lengthSettings: LengthSettings<
 
 #### `LengthSetting`
 
-[`length-setting.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/length-setting.interface.ts)
+[`length-setting.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/length/length-setting.interface.ts)
 
 ```typescript
 import { LengthSetting } from '@typedly/settings';
@@ -169,7 +169,7 @@ const lengthExactSetting: LengthSetting<
 
 #### `PatternOptions`
 
-[`pattern-options.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/pattern-options.interface.ts)
+[`pattern-options.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/pattern/pattern-options.interface.ts)
 
 ```typescript
 import { PatternOptions } from '@typedly/settings';
@@ -185,7 +185,7 @@ const patternOptions: PatternOptions = {
 
 #### `PatternSetting`
 
-[`pattern-setting.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/pattern-setting.interface.ts)
+[`pattern-setting.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/pattern/pattern-setting.interface.ts)
 
 ```typescript
 import { PatternSetting } from '@typedly/settings';
@@ -207,7 +207,7 @@ const patternRegExpSetting: PatternSetting<RegExp> = {
 
 #### `PatternSettings`
 
-[`pattern-settings.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/pattern-settings.interface.ts)
+[`pattern-settings.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/pattern/pattern-settings.interface.ts)
 
 ```typescript
 import { PatternSettings } from '@typedly/settings';
