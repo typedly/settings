@@ -33,13 +33,13 @@ A **TypeScript** type definitions package for settings.
       - [`PatternSetting`](#patternsetting)
       - [`PatternSettings`](#patternsettings)
     - Other
-      - [`ValueSettings`](#valuesetting)
+      - [`ValueSetting`](#valuesetting)
       - [`Settings`](#settings)
   - [Type](#type)
     - [`DisplaySelectedSettings`](#displayselectedsettings)
-    - [`SelectableSettings`](#selectablesettings)
     - [`OptionalField`](#optionalfield)
     - [`RequiredField`](#requiredfield)
+    - [`SelectableSettings`](#selectablesettings)
 - [Configuration System Overview](#configuration-system-overview)
 - [Contributing](#contributing)
 - [Support](#support)
@@ -272,6 +272,22 @@ export const settings: Settings<
 import { DisplaySelectedSettings } from '@typedly/settings';
 ```
 
+#### `OptionalField`
+
+[`optional-field.type.ts`](https://github.com/typedly/settings/blob/main/src/type/optional-field.type.ts)
+
+```typescript
+import { OptionalField } from '@typedly/settings';
+```
+
+#### `RequiredField`
+
+[`required-field.type.ts`](https://github.com/typedly/settings/blob/main/src/type/required-field.type.ts)
+
+```typescript
+import { RequiredField } from '@typedly/settings';
+```
+
 #### `SelectableSettings`
 
 [`selectable-settings.type.ts`](https://github.com/typedly/settings/blob/main/src/type/selectable-settings.type.ts)
@@ -300,22 +316,6 @@ export const settings: SelectableSettings<
   // ValueSettings
   value: 'abcd1234',
 }
-```
-
-#### `OptionalField`
-
-[`optional-field.type.ts`](https://github.com/typedly/settings/blob/main/src/type/optional-field.type.ts)
-
-```typescript
-import { OptionalField } from '@typedly/settings';
-```
-
-#### `RequiredField`
-
-[`required-field.type.ts`](https://github.com/typedly/settings/blob/main/src/type/required-field.type.ts)
-
-```typescript
-import { RequiredField } from '@typedly/settings';
 ```
 
 ## Configuration System Overview
