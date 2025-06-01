@@ -1,15 +1,9 @@
-import { PatternSettings } from '../interface';
+import { PatternSettings } from '../interface/pattern';
 
-export const patternSettings: PatternSettings<RegExp> = {
-  pattern: {
-    lowercase: true,
-    numeric: true,
-    regexp: /^[a-zA-Z0-9_-]+$/,
-    special: true,
-    uppercase: true,
-  },
-}
-
-export const patternRegExpSettings: PatternSettings<RegExp> = {
-  pattern: /^[a-zA-Z0-9_-]+$/
+const patternSettings: PatternSettings<RegExp> = {
+  lowercase: true,
+  numeric: true,
+  regexp: /^[a-zA-Z0-9_-]+$/,
+  special: true,
+  uppercase: true,
 }

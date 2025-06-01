@@ -1,13 +1,11 @@
-import { LengthSettings } from '../interface';
+import { LengthSettings } from '../interface/length';
 
-export const lengthSettings: LengthSettings<0, 27, 47> = {
-  length: {
-    value: 0,
-    min: 27,
-    max: 47,
-  }
-}
-
-export const lengthExactSettings: LengthSettings<27> = {
-  length: 27
+const lengthSetting: LengthSettings<
+  0,  // Value
+  27, // Min
+  47  // Max
+> = {
+  value: 0,
+  min: 27,
+  max: 47,
 }
