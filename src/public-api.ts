@@ -1,17 +1,23 @@
-import { OptionalField } from './type/optional-field.type';
 /*
  * Public API Surface of settings
  */
+// Length.
 export type {
-  // Length.
   Length,
   LengthOptions,
   LengthSetting,
   LengthSettings,
-  // Pattern.
+} from '../length';
+
+// Pattern.
+export type {
   PatternOptions,
   PatternSetting,
   PatternSettings,
+} from '../pattern';
+
+// Settings.
+export type {
   // Value.
   ValueSetting,
   // Settings.
