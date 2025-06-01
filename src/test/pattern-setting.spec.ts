@@ -1,4 +1,4 @@
-import { PatternSetting } from '../interface';
+import { PatternSetting } from '../../pattern';
 
 const patternSetting: PatternSetting<RegExp> = {
   pattern: {
