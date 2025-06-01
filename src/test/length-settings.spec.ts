@@ -1,4 +1,4 @@
-import { LengthSettings } from '../../length';
+import { LengthSettings } from '../interface/length';
 
 const lengthSetting: LengthSettings<
   0,  // Value

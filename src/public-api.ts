@@ -7,14 +7,14 @@ export type {
   LengthOptions,
   LengthSetting,
   LengthSettings,
-} from '../length';
+} from './interface/length';
 
 // Pattern.
 export type {
   PatternOptions,
   PatternSetting,
   PatternSettings,
-} from '../pattern';
+} from './interface/pattern';
 
 // Settings.
 export type {

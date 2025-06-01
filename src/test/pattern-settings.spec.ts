@@ -1,4 +1,4 @@
-import { PatternSettings } from '../../pattern';
+import { PatternSettings } from '../interface/pattern';
 
 const patternSettings: PatternSettings<RegExp> = {
   lowercase: true,

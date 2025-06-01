@@ -1,6 +1,6 @@
 // Interface.
-import { LengthSetting } from "../../length";
-import { PatternSetting } from "../../pattern";
+import { LengthSetting } from "./length";
+import { PatternSetting } from "./pattern";
 import { ValueSetting } from "./value-setting.interface";
 /**
  * @description Represents the settings for a configuration that includes value, length, and pattern validation.

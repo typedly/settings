@@ -1,7 +1,7 @@
 // Interface.
 import { Length } from "./length.interface";
 // Type.
-import { OptionalField } from "../src/type";
+import { OptionalField } from "../../type";
 /**
  * @description Represents options for length validation.
  * The length options fields are optional, fields can be omitted by setting them to `undefined` or by not providing them.

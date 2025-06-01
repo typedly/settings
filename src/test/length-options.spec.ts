@@ -1,4 +1,4 @@
-import { Length } from '../../length';
+import { Length } from '../interface/length';
 
 const length: Length<
   0,  // Value
