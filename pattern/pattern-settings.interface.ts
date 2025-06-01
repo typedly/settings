@@ -2,10 +2,11 @@
  * @description Represents the pattern settings for validation.
  * @export
  * @interface PatternSettings
- * @typedef {PatternSettings}
- * @template {RegExp | undefined} [Value=RegExp] The regular expression pattern to match.
+ * @template {RegExpp | string | undefined} [Value=RegExp | string | undefined] The regular expression pattern to match.
  */
-export interface PatternSettings<Value extends RegExp | undefined = RegExp> {
+export interface PatternSettings<
+  Value extends RegExp | string | undefined = RegExp | string | undefined
+> {
   /**
    * @description Represents the regular expression pattern to match.
    * @type {Value}
