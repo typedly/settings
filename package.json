@@ -8,7 +8,10 @@
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "devDependencies": {},
+  "peerDependencies": {
+    "@typedly/length": "^0.1.1",
+    "@typedly/pattern": "^1.0.0"
+  },
   "scripts": {
     "prepublishOnly": "npm install rimraf && npm run pkg && npm run clean",
     "pkg": "npm pkg delete module fesm2022 dependencies",
