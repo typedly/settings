@@ -14,7 +14,7 @@
 [![GitHub issues][typedly-badge-issues]][typedly-issues]
 [![GitHub license][typedly-badge-license]][typedly-license]
 
-**Version:** v0.2.0
+**Version:** v0.3.0
 
 A **TypeScript** type definitions package for settings.
 
@@ -41,6 +41,14 @@ A **TypeScript** type definitions package for settings.
 - [License](#license)
 
 ## Installation
+
+### Install peer dependencies
+
+```bash
+npm install @typedly/length @typedly/pattern --save-peer
+```
+
+### Install the package
 
 ```bash
 npm install @typedly/settings --save-peer
