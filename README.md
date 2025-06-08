@@ -14,7 +14,7 @@
 [![GitHub issues][typedly-badge-issues]][typedly-issues]
 [![GitHub license][typedly-badge-license]][typedly-license]
 
-**Version:** v0.2.0
+**Version:** v0.3.0
 
 A **TypeScript** type definitions package for settings.
 
@@ -23,15 +23,6 @@ A **TypeScript** type definitions package for settings.
 - [Installation](#installation)
 - [Api](#api)
   - [Interface](#interface)
-    - Length
-      - [`Length`](#length)
-      - [`LengthOptions`](#lengthoptions)
-      - [`LengthSetting`](#lengthsetting)
-      - [`LengthSettings`](#lengthsettings)
-    - Pattern
-      - [`PatternOptions`](#patternoptions)
-      - [`PatternSetting`](#patternsetting)
-      - [`PatternSettings`](#patternsettings)
     - Other
       - [`ValueSetting`](#valuesetting)
       - [`Settings`](#settings)
@@ -51,6 +42,14 @@ A **TypeScript** type definitions package for settings.
 
 ## Installation
 
+### Install peer dependencies
+
+```bash
+npm install @typedly/length @typedly/pattern --save-peer
+```
+
+### Install the package
+
 ```bash
 npm install @typedly/settings --save-peer
 ```
@@ -60,15 +59,6 @@ npm install @typedly/settings --save-peer
 ```typescript
 // Interface.
 import {
-  // Length.
-  Length,
-  LengthOptions,
-  LengthSetting,
-  LengthSettings,
-  // Pattern.
-  PatternOptions,
-  PatternSetting,
-  PatternSettings,
   // Value.
   ValueSetting,
   // Settings.
@@ -87,139 +77,6 @@ import {
 ```
 
 ### Interface
-
-#### `Length`
-
-[`length.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/length/length.interface.ts)
-
-```typescript
-import { Length } from '@typedly/settings';
-
-const length: Length<
-  0,  // Value
-  27, // Min
-  47  // Max
-> = {
-  value: 0,
-  min: 27,
-  max: 47,
-}
-```
-
-#### `LengthOptions`
-
-[`length-options.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/length/length-options.interface.ts)
-
-```typescript
-import { LengthOptions } from '@typedly/settings';
-
-export const length: LengthOptions<
-  0,  // Value
-  27, // Min
-  47  // Max
-> = {
-  min: 27,
-  max: 47,
-}
-```
-
-#### `LengthSettings`
-
-[`length-settings.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/length/length-settings.interface.ts)
-
-```typescript
-import { LengthSettings } from '@typedly/settings';
-
-const lengthSettings: LengthSettings<
-  0,  // Value
-  27, // Min
-  47  // Max
-> = {
-  value: 0,
-  min: 27,
-  max: 47,
-}
-```
-
-#### `LengthSetting`
-
-[`length-setting.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/length/length-setting.interface.ts)
-
-```typescript
-import { LengthSetting } from '@typedly/settings';
-
-const lengthSetting: LengthSetting<
-  0,  // Value
-  27, // Min
-  47  // Max
-> = {
-  length: {
-    value: 0,
-    min: 27,
-    max: 47,
-  }
-}
-
-const lengthExactSetting: LengthSetting<
-  27 // Value
-> = {
-  length: 27
-}
-```
-
-#### `PatternOptions`
-
-[`pattern-options.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/pattern/pattern-options.interface.ts)
-
-```typescript
-import { PatternOptions } from '@typedly/settings';
-
-const patternOptions: PatternOptions = {
-  lowercase: true,
-  numeric: true,
-  regexp: /^[a-zA-Z0-9_-]+$/,
-  special: true,
-  uppercase: true,
-}
-```
-
-#### `PatternSetting`
-
-[`pattern-setting.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/pattern/pattern-setting.interface.ts)
-
-```typescript
-import { PatternSetting } from '@typedly/settings';
-
-const patternSetting: PatternSetting<RegExp> = {
-  pattern: {
-    lowercase: true,
-    numeric: true,
-    regexp: /^[a-zA-Z0-9_-]+$/,
-    special: true,
-    uppercase: true,
-  },
-}
-
-const patternRegExpSetting: PatternSetting<RegExp> = {
-  pattern: /^[a-zA-Z0-9_-]+$/
-}
-```
-
-#### `PatternSettings`
-
-[`pattern-settings.interface.ts`](https://github.com/typedly/settings/blob/main/src/interface/pattern/pattern-settings.interface.ts)
-
-```typescript
-import { PatternSettings } from '@typedly/settings';
-
-const patternSettings: PatternSettings<RegExp> = {
-  lowercase: true,
-  numeric: true,
-  regexp: /^[a-zA-Z0-9_-]+$/,
-  special: true,
-  uppercase: true,
-}
-```
 
 #### `ValueSetting`
 
